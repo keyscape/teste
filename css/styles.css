@@ -1,0 +1,196 @@
+@font-face {
+    font-family: monster;
+    src: url(../assets/eurostile-bold-extended.otf);
+  }
+
+body{
+    font-family: monster;
+}
+
+header.masthead {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+	height: 100vh;
+}
+
+/*######################################################
+###################### Backgrounds #####################
+######################################################*/
+
+.back-login{
+	background: linear-gradient(to bottom, #00000036 0%, #000000f1 100%), url(../assets//login/back.png);
+}
+
+/*######################################################
+######################### Cards ########################
+######################################################*/
+
+.card-login{
+	background-color: #00000000;
+	border-color: #ffffff;
+}
+
+.card-info-login{
+	display: inline-block;
+	width: 10%;
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 0.375rem 0rem;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #dddddd;
+	background-color: #ffffff00;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	text-align: center; 
+	cursor: pointer;
+}
+
+/*######################################################
+######################## Inputs ########################
+######################################################*/
+
+.input-login {
+	display: inline-block;
+	width: 70%;
+	color: #dddddd;
+	background-color: #ffffff1f;
+	border: 1px solid #ced4da;
+	text-align: center;  
+}
+
+.input-login:focus {
+	color: #363636;
+	background-color: #ffffffb2;
+	border-color: #000000;
+	text-align: center;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(194, 194, 194, 0.25);
+}
+
+.input-login::placeholder {
+	color: #858585;
+	opacity: 1;
+	text-align: center;
+}
+
+.input-login:disabled, .input-login[readonly] {
+	background-color: #e9ecef;
+	opacity: 1;
+}
+
+/*######################################################
+######################## Buttons #######################
+######################################################*/
+
+.btn-login {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	color: #ffffff;
+	background-color: transparent;
+	border: 1px solid #ffffff;
+}
+
+.btn-login:hover {
+	background-color: #ffffff1f;
+	text-decoration: none;
+}
+
+.btn-login:focus, .btn-login.focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(194, 194, 194, 0.25);
+}
+
+.btn-login.disabled, .btn-login:disabled {
+	opacity: 0.65;
+}
+
+.btn-login:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.img-logo{
+	height: 100%;
+}
+
+.background{
+    background: radial-gradient(circle, #000000e5 0%, #000000ad 100%), url("../assets/main/back_main.png");
+    background-color: rgb(33, 33, 33);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.btn-dark-my{
+    background-color: rgba(0, 0, 0, 0.7); /*black with 70% transparency*/
+    border-color: #8a8a8a;
+	border-width: 2px;
+	border-style: solid;
+    color: #ffffff;
+}
+
+.btn-dark-my:hover {
+    background-color: rgba(65, 65, 65, 0.5);
+    color: #ffffff;
+}
+
+.btn-dark-my:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.4vh rgba(135, 131, 138, 0.3);
+  }
+
+.box-center{
+    padding-top: 4.1vh !important;
+    padding-bottom: 4.1vh !important;
+    font-size: 2.5vh;
+}
+
+.box-header{
+    font-size: 5vh;
+    height: 8vh;  
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    line-height: 1;
+	color: #ffffff;
+}
+
+.text-white{
+    color: white;
+}
+
+.text-grey{
+    color: rgb(189, 189, 189);
+}
+
+.text-red{
+    color: #cc0909;
+}
+
+.border-green{
+	border-color: #25a70b !important;
+}
+
+.border-red{
+	border-color: #ce0707 !important;
+}
+
+.border-orange{
+	border-color: #ce6e07 !important;
+}

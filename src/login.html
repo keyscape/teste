@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="author" content="Lucas do Prado Pinto">
+
+        <title>Sistema</title>
+        
+        <!-- Styles & Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+
+        <!-- Font Awesome icons (free version)-->
+        <script src="./js/fontAwesome.min.js"></script>
+
+
+
+        <link rel="icon" type="image/x-icon" href="assets/icon.png" />
+    </head>
+
+    <body>
+        <header class="masthead back-login">
+            <div class="container h-100">
+                <div class="row justify-content-center text-center">
+
+                    <div class="col-md-10" style="height:40vh; margin-top: 15vh;">
+                        <img class="img-logo" src="./assets/login/e.png">
+                    </div>
+
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-5" style="height:45vh; padding-top: 5vh;">
+
+                        <div class="card card-login align-items-center">
+        
+                            <div style="width: 100%;" class="mt-4">
+                                <p id="attempts" class="card-info-login" data-toggle="tooltip" title="Tentativas restantes" data-placement="bottom">3</p>
+                                <input id="pwd" type="password" name="password" placeholder="Senha" class="form-control input-login">
+                                <p class="card-info-login" id="show-pwd">
+                                    <i id="eye" class="far fa-eye" style="color: #ffffff;"></i>
+                                    <i id="eye-slash" class="far fa-eye-slash d-none" style="color: #ffffff;"></i>
+                                </p>
+                            </div>
+
+                            <button id="login" type="submit" onclick="attemptsLogin()" class="btn-login my-3">Entrar</button>
+                            
+                            <p class="m-0 mb-3 d-none" id="time" style="color: white; font-size: 0.9rem"></p>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Script for this page-->
+        <script src="./js/login.js"></script>
+        
+        
+        <!--
+        tentar solucionar os warnings de todas as rotas..
+        analisar porque tem uma ? na rota do suspects..
+        -->
+        
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="./js/jquery-3.6.0.min.js" ></script>
+        <script src="./js/bootstrap.bundle.min.js" ></script>
+
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+
+</html>

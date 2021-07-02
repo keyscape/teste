@@ -1,0 +1,467 @@
+<!doctype html>
+
+<!--
+    Heeey, por que você tá olhando aqui!?
+    Essa página é só um teste para a futura sala.
+    
+    Não repara na bagunça, tive que juntar dois 
+    HTML's em um só, e o JS tá uma gambiarra que só.
+    
+    Mas não esquenta, no final vai estar tudo dentro 
+    de um sistema com Node.js, e não em páginas estáticas.
+-->
+
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="Lucas do Prado Pinto">
+
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.png"/>
+    
+        <title>10Conectados</title>
+        
+        <link href="./assets/star.png" rel="icon" type="image/x-icon">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/magnific-popup.css" rel="stylesheet">
+        <link href="./css/styles.css" rel="stylesheet">
+
+        <script src="./js/fontAwesome.min.js"></script>
+    
+    </head>
+
+    <body>
+
+        <header id="pageLogin" class="masthead back-login">
+            <div class="container h-100">
+                <div class="row justify-content-center text-center">
+
+                    <div class="col-md-10" style="height:40vh; margin-top: 15vh;">
+                        <img class="img-logo" src="./assets/login/e.png">
+                    </div>
+
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-5" style="height:45vh; padding-top: 5vh;">
+
+                        <div class="card card-login align-items-center">
+        
+                            <div style="width: 100%;" class="mt-4">
+                                <p id="attempts" class="card-info-login" data-toggle="tooltip" title="Tentativas restantes" data-placement="bottom">3</p>
+                                <input id="pwd" type="password" name="password" placeholder="Senha" class="form-control input-login">
+                                <p class="card-info-login" id="show-pwd">
+                                    <i id="eye" class="far fa-eye" style="color: #ffffff;"></i>
+                                    <i id="eye-slash" class="far fa-eye-slash d-none" style="color: #ffffff;"></i>
+                                </p>
+                            </div>
+
+                            <button id="login" type="submit" onclick="attemptsLogin()" class="btn-login my-3">Entrar</button>
+                            
+                            <p class="m-0 mb-3 d-none" id="time" style="color: white; font-size: 0.9rem"></p>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <header id="pageMain" class="background d-none" style="height: 100vh;">
+
+            <div class="container-fluid h-100">
+
+                <div class="row py-3 px-3 text-center h-100">
+
+                    <div class="col-sm-12 border border-light">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-sm-10 box-header mt-4">Sistema Central</div>
+
+                            <div class="col-sm-10 col-md-6 mt-2">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-sm-6 col-md-4 my-1">
+                                        <span class="text-white">Nome: </span><span class="text-grey">Euler</span>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-1">
+                                        <span class="text-white">Tipo: </span><span class="text-grey">IA</span>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-1">
+                                        <span class="text-white">Classe: </span><span class="text-grey">X+++</span>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-1">
+                                        <span class="text-white">Status: </span><span class="text-red">=!eRRor##%</span>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-1">
+                                        <span class="text-white">Propriedade: </span><span class="text-grey">Expoente</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-10 mt-4">
+
+                                <div class="row align-items-center justify-content-center">
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Newton</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#euclides-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-red">Módulo Euclides</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Einstein</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Curie</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Turing</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#descartes-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-red">Módulo Descartes</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#fibonacci-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-red">Módulo Fibonacci</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Lovelace</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Gauss</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Riemann</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#nop1-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-orange">§S=e##c!re~to&</a>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-4 my-2">
+                                        <a href="#other-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links border-green">Módulo Boole</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="other-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-green">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">Módulo Funcionando Normalmente</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="euclides-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">Módulo Euclides</h1>
+                            </div>
+                            <div class="col-sm-11 col-md-11 my-2">
+                                <a href="http://escaperoom.cp.utfpr.edu.br/" target="_blank" class="btn btn-dark-my w-100 box-center">
+                                
+                                    <br>
+                                    [1019954.237860] mod: modulo euclides recarregado<br>
+                                    [1019954.247657] local: error modulo language não defined [y-pt/n-us]<br>
+                                    [1019964.251123] ax_load: axiomas carregados<br>
+                                    [1019964.264166] wlp2s0: authenticate -> hexagono -> group7 -> 7<br>
+                                    [1019964.256218] web: cannot find blog post and ig photo (fb find four sides)<br>
+                                    [1019964.291436] web: http://escaperoom.cp.utfpr.edu.br/<br>
+                                    [1019964.422431] web: procurando contatos<br>
+                                    [1019964.601595] status: definindo geometria/provando teoremas<br>
+                                    [1019964.573956] web: searching social medias<br>
+                                    [1019964.691133] status: checando nomes;<br>
+                                    [1019964.766323] ans: euclides? elesclides? vosclidearieis?<br>
+                                    [1019964.784896] ans: euclides da cunha?<br>
+                                    [1019964.995652] error: access log 1019964.291436<br><br>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="fibonacci-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">Módulo Fibonacci</h1>
+                            </div>
+                            <div class="col-sm-11 col-md-11 my-2">
+                                <div class="btn-dark-my w-100 box-center" style="cursor:text">
+                                
+                                    <br>
+                                    %% [time] request-line<br>
+                                    [lk34:05]part1: "criptografado" [end]<br>
+                                    %%error - error-message<br>
+                                    [xp15:12]%%chave = nome_modulo<br>
+                                    #!/usr/bin/perl<br>
+                                    [lk34:01]part1: "inver" -> [lk34:02]<br>
+                                    while (STDIN) {print $_;}<br>
+                                    [lk34:00]%Link: monte_o_link -> [lk34:01]<br>
+                                    [lk34:03]part3: ".com/" -> [lk34:04]<br>
+                                    Request (plain_text):<br>
+                                        video.link[that]<br>
+                                    Response (crypto_text):<br>
+                                    [cryptography] code = ifJYdVcbO1h_rdyroYBFYYFIfLON27n4FPECcmxUXiQ<br>
+                                    [lk34:04]part4: "texto-" -> [lk34:05]<br>
+                                    # Log what remains<br>
+                                    [lk34:02]part2: "texto" -> [lk34:03]<br>
+                                    CustomLog logs/access_log common env=!dontlog<br>
+                                    [start] -> [lk34:00]<br><br>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="descartes-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">Módulo Descartes</h1>
+                            </div>
+                            <div class="col-sm-11 col-md-11 my-2">
+                                <a href="https://youtu.be/LG5vdQmCv8U" target="_blank" class="btn btn-dark-my w-100 box-center">
+                                
+                                    <br>
+                                    ReferenceError: reference to privacy property on undefined windows systems Es.Cape.Room<br>
+                                    TypeError: anonymous sound functions sometimes return a value	http.mp3:60<br>
+                                    GET [https://youtu.be/LG5vdQmCv8U]<br>
+                                    TypeError: anonymous function does not always return a value	pwe-min.py83<br>
+                                    TypeError: anonymous function does not always return a value	lkd-hdi.js83<br><br>
+                                
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="container mfp-hide" id="nop1-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">§S=e##c!re~to&_I</h1>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=me_ajuda" target="_blank" class="btn btn-dark-my w-100 box-center">3,14159...</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=errado" target="_blank" class="btn btn-dark-my w-100 box-center">1,41421...</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_mau" target="_blank" class="btn btn-dark-my w-100 box-center">1,73205...</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="#nop2-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links">2,71828...</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=nao_confie_neles" target="_blank" class="btn btn-dark-my w-100 box-center">2,23606...</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="nop2-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">§S=e##c!re~to&_II</h1>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=paralogicos_bom" target="_blank" class="btn btn-dark-my w-100 box-center">Isaac</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=estou_vivo" target="_blank" class="btn btn-dark-my w-100 box-center">Carl</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_nao_controla" target="_blank" class="btn btn-dark-my w-100 box-center">Ada</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=eu_descobri_tudo" target="_blank" class="btn btn-dark-my w-100 box-center">Alan</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_mau" target="_blank" class="btn btn-dark-my w-100 box-center">Pierre</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="#nop3-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links">Leonhard</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_rouba" target="_blank" class="btn btn-dark-my w-100 box-center">René</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_tortura" target="_blank" class="btn btn-dark-my w-100 box-center">Sophie</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=eu_tenho_consciencia" target="_blank" class="btn btn-dark-my w-100 box-center">Marie</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=nao_confie_neles" target="_blank" class="btn btn-dark-my w-100 box-center">Bernhard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="nop3-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">§S=e##c!re~to&_III</h1>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=paralogicos_bom" target="_blank" class="btn btn-dark-my w-100 box-center">DF</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=estou_vivo" target="_blank" class="btn btn-dark-my w-100 box-center">BA</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_nao_controla" target="_blank" class="btn btn-dark-my w-100 box-center">CT</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=eu_descobri_tudo" target="_blank" class="btn btn-dark-my w-100 box-center">NF</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="#nop4-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links">CP</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_mau" target="_blank" class="btn btn-dark-my w-100 box-center">SP</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_rouba" target="_blank" class="btn btn-dark-my w-100 box-center">LD</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="nop4-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">§S=e##c!re~to&_IV</h1>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=paralogicos_bom" target="_blank" class="btn btn-dark-my w-100 box-center">ln x</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="#nop5-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links">y^x</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=estou_vivo" target="_blank" class="btn btn-dark-my w-100 box-center">x/y</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_nao_controla" target="_blank" class="btn btn-dark-my w-100 box-center">der(x)</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=eu_descobri_tudo" target="_blank" class="btn btn-dark-my w-100 box-center">lim x</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_mau" target="_blank" class="btn btn-dark-my w-100 box-center">int(xdx)</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=expoente_rouba" target="_blank" class="btn btn-dark-my w-100 box-center">raiz(x)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="nop5-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2 border-red">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2">§S=e##c!re~to&_V</h1>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=mentira" target="_blank" class="btn btn-dark-my w-100 box-center">euler_off</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=mentira" target="_blank" class="btn btn-dark-my w-100 box-center">_+__+</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="#nop6-links" target="_blank" class="btn btn-dark-my w-100 box-center more-links">exp_mau</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=mentira" target="_blank" class="btn btn-dark-my w-100 box-center">$%##=</a>
+                            </div>
+                            <div class="col-sm-6 col-md-4 my-2">
+                                <a href="https://www.google.com/search?q=mentira" target="_blank" class="btn btn-dark-my w-100 box-center">paralog_mau</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mfp-hide" id="nop6-links">
+                <div class="row justify-content-center text-center text-white">
+                    <div style="background-color: rgba(0, 0, 0, 0.75);" class="col-sm-10 col-md-8 border border-light px-3 pb-2">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-2">
+                                <h1 class="my-2"><br>Alguma informação importante que eu ainda não sei qual é mas que nós podemos pensar certinho depois<br><span style="font-size: 1.5rem; color: #ffffff15;">Bolsonaro Genocida</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Script for this page-->
+        <script src="./js/script.js"></script>
+        
+        <script src="./js/jquery-3.6.0.min.js" ></script>
+        <script src="./js/bootstrap.bundle.min.js" ></script>
+        <script src="./js/magnific-popup.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('.more-links').magnificPopup({type:'inline'})
+            });
+
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        
+    </body>
+
+</html>
